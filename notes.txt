@@ -1,0 +1,13 @@
+For storing tasks:
+One table which contains task details, periodiciity and everything (maybe called taskDetails)
+One table which contains tasks marked as completed
+
+Example:
+Current date 15.08.2021
+Fetch 01.08.2021 -> 31.08.2021
+from 01.08.2021 -> 15.08.2021 fetching and displaying history tasks
+from 15.08.2021 -> 31.08.2021 getting the task info and in frontend display the following occurances of the task
+
+??? maybe compute task occurances in the past to, and display them only when there is not an entry into task history for that date
+
+if task is marked as completed, insert into task history 
