@@ -1,5 +1,5 @@
 For storing tasks:
-One table which contains task details, periodiciity and everything (maybe called taskDetails)
+One table which contains task details, periodicity and everything (maybe called taskDetails)
 One table which contains tasks marked as completed
 
 Example:

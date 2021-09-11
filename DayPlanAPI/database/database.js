@@ -13,16 +13,17 @@ exports.tables = {
     tasks: {
         name: 'tasks',
         columns: {
-            task_id: 'task_id',
-            user_id: 'userID',
-            isPeriodic: 'isPeriodic',
+            id: 'id',
+            userID: 'userID',
+            categoryID: 'categoryID',
+            isRecursive: 'isRecursive',
             name: 'name',
             description: 'description',
-            startDate: 'startDate',
+            created: 'created',
             isDaily: 'isDaily',
             isWeekly: 'isWeekly',
-            weeklyOccurances: 'weeklyOccurances',
-            category: 'category'
+            weekly: 'weekly',
+            startDate: 'startDate'
         }
     },
     users: {
