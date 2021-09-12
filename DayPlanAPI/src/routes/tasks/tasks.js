@@ -7,10 +7,19 @@ const tables = require('../../../database/database').tables
 router.get('/getTask/:id', getTaskByID)
 
 async function getTaskByID (req, res) {
+    //!!!!!!!!! add user check
     const logger = res.locals.logger
     try {
         let taskID = req.params.id
-        const getTaskQuery = `SELECT * FROM ${tables.tasks.name} WHERE ${tables.tasks.columns.id} = ?;`
+        const getTaskQuery = `SELECT 
+            ${tables.tasks.name}.${tables.tasks.columns.id} as task_id, 
+            ${tables.tasks.name}.${tables.tasks.columns.name} as task_name, 
+            ${tables.tasks.columns.description},
+            ${tables.categories.name}.${tables.categories.columns.name},
+            ${tables.categories.columns.color} 
+            FROM ${tables.tasks.name} INNER JOIN ${tables.categories.name} 
+            ON ${tables.categories.name}.${tables.categories.columns.id}=${tables.tasks.columns.categoryID}
+            WHERE ${tables.tasks.name}.${tables.tasks.columns.id}=${taskID};`
         let [results] = await res.locals.mysql.promise().query(getTaskQuery, [taskID])
 
         if (results.length === 0) {

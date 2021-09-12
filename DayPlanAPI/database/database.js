@@ -26,6 +26,15 @@ exports.tables = {
             startDate: 'startDate'
         }
     },
+    tasks_history: {
+        name: 'tasks_history',
+        columns: {
+            id: 'id',
+            taskID: 'taskID',
+            userID: 'userID',
+            inserted: 'inserted'
+        }
+    },
     users: {
         name: 'users',
         columns: {

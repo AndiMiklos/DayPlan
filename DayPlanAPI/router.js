@@ -3,11 +3,11 @@ var router = express.Router()
 
 const access = require('./src/routes/access/access')
 const categories = require('./src/routes/categories/categories')
-const tasks = require('./src/routes/tasks/tasks')
+const tasksRouter = require('./src/routes/tasks/router')
 
 router.use('/access', access)
 router.use('/categories', categories)
-router.use('/tasks', tasks)
+router.use('/tasks', tasksRouter)
 
 module.exports = router
 
